@@ -40,11 +40,11 @@
           <p class="footer-nav-title">Get In Touch</p>
           <div class="footer-contact-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>heandet@example.com</span>
+            <span>heandet1676@gmail.com</span>
           </div>
           <div class="footer-contact-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Phnom Penh, Cambodia</span>
+            <span>Battambang, Cambodia</span>
           </div>
           <a href="#contact" class="btn-primary-custom mt-3" style="font-size:0.82rem;padding:0.55rem 1.2rem" @click.prevent="scrollTo('contact')">Start a Project</a>
         </div>

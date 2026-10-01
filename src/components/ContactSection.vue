@@ -116,9 +116,9 @@ export default {
       submitting: false,
       submitted: false,
       contactInfo: {
-        email: 'heandet@example.com',
-        phone: '+855 XX XXX XXXX',
-        location: 'Phnom Penh, Cambodia'
+        email: 'heandet1676@gmail.com',
+        phone: '+855 862 181 26',
+        location: 'Battambang, Cambodia , '
       },
       socials: [
         {
