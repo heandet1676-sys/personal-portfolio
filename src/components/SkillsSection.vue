@@ -9,7 +9,7 @@
       </div>
 
       <div class="skills-grid">
-        <div class="skill-category glass-card reveal" v-for="(cat, idx) in categories" :key="cat.name" :style="{ transitionDelay: (idx * 0.1) + 's' }">
+        <div class="skill-category glass-card reveal-scale" v-for="(cat, idx) in categories" :key="cat.name" :style="{ transitionDelay: (idx * 0.1) + 's' }">
           <div class="cat-header">
             <div class="cat-icon" v-html="cat.icon"></div>
             <h3 class="cat-name">{{ cat.name }}</h3>
@@ -33,7 +33,7 @@
       <div class="tech-badges reveal mt-5">
         <h4 class="badges-title">Also familiar with</h4>
         <div class="badges-row">
-          <span class="tech-badge" v-for="t in extraTech" :key="t">{{ t }}</span>
+          <span class="tech-badge scroll-animate" v-for="t in extraTech" :key="t">{{ t }}</span>
         </div>
       </div>
     </div>
@@ -117,7 +117,18 @@ export default {
 .skill-img { object-fit: contain; }
 .skill-name { font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); white-space: nowrap; }
 .skill-bar-wrap { width: 80px; height: 4px; background: rgba(255,255,255,0.07); border-radius: 2px; overflow: hidden; }
-.skill-bar { height: 100%; background: linear-gradient(90deg, var(--accent) 0%, var(--cyan) 100%); border-radius: 2px; transition: width 1s ease; }
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1 0%, #06b6d4 60%, #a855f7 100%);
+  background-size: 200% auto;
+  border-radius: 2px;
+  transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+  animation: bar-shimmer 2.5s linear infinite;
+  box-shadow: 0 0 8px rgba(99,102,241,0.4);
+}
+.skill-bar-wrap:hover .skill-bar {
+  box-shadow: 0 0 14px rgba(99,102,241,0.7);
+}
 .skill-level { font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono); white-space: nowrap; }
 
 /* Extra badges */
@@ -138,3 +149,4 @@ export default {
   .skill-bar-wrap { width: 100%; }
 }
 </style>
+

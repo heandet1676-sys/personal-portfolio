@@ -8,7 +8,7 @@
       </div>
 
       <div class="edu-grid">
-        <div class="edu-card glass-card reveal" v-for="(edu, idx) in education" :key="idx" :style="{ transitionDelay: (idx * 0.1) + 's' }">
+        <div class="edu-card glass-card reveal-right" v-for="(edu, idx) in education" :key="idx" :style="{ transitionDelay: (idx * 0.1) + 's' }">
           <div class="edu-icon-wrap">
             <div class="edu-icon" v-html="edu.icon"></div>
           </div>
@@ -151,3 +151,4 @@ export default {
 @media (max-width: 900px) { .edu-grid { grid-template-columns: 1fr; } .cert-grid { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .edu-card { flex-direction: column; } }
 </style>
+

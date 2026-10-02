@@ -9,7 +9,7 @@
       </div>
 
       <div class="services-grid">
-        <div class="service-card glass-card reveal" v-for="(service, idx) in services" :key="service.title" :style="{ transitionDelay: (idx * 0.08) + 's' }">
+        <div class="service-card glass-card reveal-scale" v-for="(service, idx) in services" :key="service.title" :style="{ transitionDelay: (idx * 0.08) + 's' }">
           <div class="service-icon-wrap">
             <div class="service-icon" v-html="service.icon"></div>
           </div>
@@ -109,3 +109,4 @@ export default {
 @media (max-width: 900px)  { .services-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px)  { .services-grid { grid-template-columns: 1fr; } }
 </style>
+

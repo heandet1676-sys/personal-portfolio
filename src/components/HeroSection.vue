@@ -13,13 +13,23 @@
       <div class="hero-inner">
         <!-- Left: Text -->
         <div class="hero-text">
-          <div class="hero-badge animate-fade-up">
+          <div class="hero-badge animate-fade-up" style="background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(6,182,212,0.1));border:1px solid rgba(99,102,241,0.3)">
             <span class="badge-dot"></span>
             <span class="mono">Available for opportunities</span>
           </div>
           <p class="hero-greeting animate-fade-up" style="animation-delay:0.1s">Hi, I'm</p>
-          <h1 class="hero-name animate-fade-up" style="animation-delay:0.2s">
-            Hean Det<span class="cursor-blink">_</span>
+          <h1 class="hero-name" style="animation-delay:0.2s">
+            <span class="name-letters" aria-label="Hean Det">
+              <span class="name-letter" style="--i:0">H</span>
+              <span class="name-letter" style="--i:1">e</span>
+              <span class="name-letter" style="--i:2">a</span>
+              <span class="name-letter" style="--i:3">n</span>
+              <span class="name-letter name-space"> </span>
+              <span class="name-letter" style="--i:5">D</span>
+              <span class="name-letter" style="--i:6">e</span>
+              <span class="name-letter" style="--i:7">t</span>
+            </span>
+            <span class="cursor-blink">_</span>
           </h1>
           <h2 class="hero-title animate-fade-up" style="animation-delay:0.3s">
             <span class="gradient-text">Web Developer</span>
@@ -238,7 +248,7 @@ export default {
   width: 260px; height: 260px; border-radius: 50%;
   background: conic-gradient(from 0deg, var(--accent) 0%, var(--cyan) 33%, var(--purple) 66%, var(--accent) 100%);
   padding: 3px;
-  animation: spin-slow 8s linear infinite;
+  animation: spin-slow 8s linear infinite, ring-glow 3s ease-in-out infinite;
 }
 .avatar-inner {
   width: 100%; height: 100%; border-radius: 50%;
@@ -311,6 +321,62 @@ export default {
   .orbit { display: none; }
   .scroll-indicator { display: none; }
 }
+@keyframes ring-glow {
+  0%, 100% { box-shadow: 0 0 30px rgba(99,102,241,0.5), 0 0 60px rgba(99,102,241,0.15); }
+  50%       { box-shadow: 0 0 60px rgba(99,102,241,0.8), 0 0 100px rgba(6,182,212,0.3); }
+}
+.hero-visual:hover .avatar-ring {
+  animation-duration: 4s, 1.5s;
+}
+.avatar-photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+.avatar-ring:hover .avatar-photo { transform: scale(1.05); }
+
+/* ---- Name letter animation ---- */
+.name-letters {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.name-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-40px) rotateX(-90deg);
+  animation: letter-drop 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  animation-delay: calc(0.3s + var(--i) * 0.08s);
+  transform-origin: bottom center;
+  background: linear-gradient(135deg, #f8fafc 0%, #818cf8 40%, #06b6d4 70%, #f8fafc 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: letter-drop 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards,
+             name-shimmer 4s linear 1.2s infinite;
+  transition: transform 0.2s ease;
+}
+.name-letter:hover {
+  transform: translateY(-8px) scale(1.2) rotate(-3deg) !important;
+  filter: drop-shadow(0 0 12px rgba(129,140,248,0.9));
+}
+.name-space {
+  width: 0.4em;
+  opacity: 1;
+  animation: none;
+  background: none;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes letter-drop {
+  0%   { opacity: 0; transform: translateY(-50px) rotateX(-90deg); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0) rotateX(0deg); }
+}
+@keyframes name-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
 </style>
-
-

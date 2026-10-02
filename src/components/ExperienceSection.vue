@@ -8,7 +8,7 @@
       </div>
 
       <div class="timeline">
-        <div class="timeline-item reveal" v-for="(exp, idx) in experiences" :key="idx" :style="{ transitionDelay: (idx * 0.12) + 's' }">
+        <div class="timeline-item reveal-left" v-for="(exp, idx) in experiences" :key="idx" :style="{ transitionDelay: (idx * 0.12) + 's' }">
           <div class="timeline-dot" :class="exp.current ? 'dot-active' : ''">
             <div class="dot-inner"></div>
           </div>
@@ -110,3 +110,4 @@ export default {
   .exp-header { flex-direction: column; }
 }
 </style>
+

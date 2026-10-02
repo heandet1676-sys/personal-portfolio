@@ -14,7 +14,7 @@
       </div>
 
       <div class="projects-grid">
-        <div class="project-card glass-card reveal" v-for="(proj, idx) in filteredProjects" :key="proj.id" :style="{ transitionDelay: (idx * 0.1) + 's' }">
+        <div class="project-card glass-card scroll-animate" v-for="(proj, idx) in filteredProjects" :key="proj.id" :style="{ transitionDelay: (idx * 0.1) + 's' }">
           <!-- Project image -->
           <div class="proj-image" :style="{ background: proj.gradient }">
             <div class="proj-image-inner">
@@ -181,3 +181,4 @@ export default {
 @media (max-width: 1100px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .projects-grid { grid-template-columns: 1fr; } }
 </style>
+
